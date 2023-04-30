@@ -119,8 +119,8 @@
                                         <form action="{{ route('employee.destroy', $employees->emp_id) }}"
                                             method="post">
                                             <a class="btn btn-warning" href="/edit/{{ $employees->emp_id }}">Edit</a>
-                                            <a class="btn btn-danger"
-                                                href="/delete/{{ $employees->emp_id }}">Delete</a>
+                                            <a class="btn btn-danger" href="/delete/{{ $employees->emp_id }}"
+                                                onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
                                         </form>
                                     </td>
 

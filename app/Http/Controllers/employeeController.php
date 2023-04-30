@@ -50,7 +50,7 @@ class employeeController extends Controller
         $Position = $request->input('Position');
         DB::insert('INSERT INTO tbl_employees (emp_name, emp_address, emp_department, emp_email, emp_contactNum, emp_dateEmployed, emp_position) VALUES (?,?,?,?,?,?,?)', [$Name, $Address, $Department, $Email, $ContactNumber, $DateEmployed, $Position]);
 
-        return redirect()->route('employee.index')->with('success', 'Post Updated Successfully');
+        return redirect()->route('employee.index')->with('success', 'Employee Added Successfully');
     }
 
     /**
@@ -130,7 +130,7 @@ class employeeController extends Controller
         if ($username == 'admin' && $password == '1234') {
             return redirect()->route('employee.index');
         } else {
-            return redirect()->back()->withErrors(['error' => 'Incorrect Username and password. Try username = admin & password = 1234']);
+            return redirect()->back()->withErrors(['error' => 'Incorrect Username and/or password. Try username = admin & password = 1234']);
         }
     }
 }
